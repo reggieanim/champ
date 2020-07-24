@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/champ/static/css/main.1cdb07bd.chunk.css",
+    "main.js": "/champ/static/js/main.36237a6b.chunk.js",
+    "main.js.map": "/champ/static/js/main.36237a6b.chunk.js.map",
+    "runtime-main.js": "/champ/static/js/runtime-main.c5b1f87c.js",
+    "runtime-main.js.map": "/champ/static/js/runtime-main.c5b1f87c.js.map",
+    "static/css/2.85c120cf.chunk.css": "/champ/static/css/2.85c120cf.chunk.css",
+    "static/js/2.c3095232.chunk.js": "/champ/static/js/2.c3095232.chunk.js",
+    "static/js/2.c3095232.chunk.js.map": "/champ/static/js/2.c3095232.chunk.js.map",
+    "index.html": "/champ/index.html",
+    "precache-manifest.ef08f7a014bb15482d2ad332aab93537.js": "/champ/precache-manifest.ef08f7a014bb15482d2ad332aab93537.js",
+    "service-worker.js": "/champ/service-worker.js",
+    "static/css/2.85c120cf.chunk.css.map": "/champ/static/css/2.85c120cf.chunk.css.map",
+    "static/css/main.1cdb07bd.chunk.css.map": "/champ/static/css/main.1cdb07bd.chunk.css.map",
+    "static/js/2.c3095232.chunk.js.LICENSE.txt": "/champ/static/js/2.c3095232.chunk.js.LICENSE.txt",
+    "static/media/sliceButton.module.scss": "/champ/static/media/FiraSans-Light.03422917.ttf",
+    "static/media/Champ.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5b1f87c.js",
+    "static/css/2.85c120cf.chunk.css",
+    "static/js/2.c3095232.chunk.js",
+    "static/css/main.1cdb07bd.chunk.css",
+    "static/js/main.36237a6b.chunk.js"
+  ]
+}
