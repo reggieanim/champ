@@ -9,10 +9,19 @@ const Champ = () => {
       return !prevState;
     });
   };
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [initSound , setInitSound] = useState(false)
+
+  const handleInitial = () => {
+      if(initSound) {
+          return
+      } 
+      handleMute()
+      setInitSound(true)
+  }
 
   return (
-    <div className={styles.champParent}>
+    <div className={styles.champParent} onClick={handleInitial}>
       <video className={styles.champ} autoPlay loop muted={muted}>
         <source src="https://i.imgur.com/1InZsdT.mp4" />
         Your browser does not support the video tag.

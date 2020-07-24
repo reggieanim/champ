@@ -80,14 +80,37 @@
         width: 200px;
         position: absolute;
         top:90%;
-        left: 88%;
+        left: 78%;
        
+    }
+    .textContainer {
+        left: 10%;
+     & h1 {
+        font-size: 58px;
+        margin: 0;
+     }
+     & h2 {
+        font-size:13px;
+        margin: 0;
+     }
     }
   }
 
   @media only screen and (min-width: 769px) and (max-device-width: 1083px) {
     .mute {
-      left: 85%;
+      left: 75%;
     
+    }
+  }
+
+  @media only screen and (min-width: 1084px) and (max-device-width: 1660px) {
+    .mute {
+      left: 88%;
+    
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .mute {
+      left:55%
     }
   }
