@@ -1,0 +1,93 @@
+@font-face {
+    font-family: RBN;
+    src: url(RBNo2Light-Light.ttf);
+  }
+
+.champParent {
+    position: fixed;
+    right: 10%;
+    width: 100%;
+    // height: auto;
+    background-color: black;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.champ {
+    position: absolute; 
+    // width: 100%;
+    // top: 50%;
+    // left:50%;
+    // height: auto;
+    // transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+.textContainer {
+    position: absolute;
+    top:40%;
+    left: 20%;
+    background-color: black;
+    opacity: 0.8;
+    & h1  {
+        color: white;
+        font-family: RBN;
+        font-size: 1000%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: -20px;
+    }
+    & h2 {
+        color: white;
+        font-family: RBN;
+        margin-top: -100px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.mute {
+    opacity: 0.8;
+    width: 200px;
+    position: absolute;
+    top:90%;
+    left: 94%;
+   
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .champ {
+        // display: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .champ {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .champParent {
+      right: 0;
+    }
+    .mute {
+        opacity: 0.8;
+        width: 200px;
+        position: absolute;
+        top:90%;
+        left: 88%;
+       
+    }
+  }
+
+  @media only screen and (min-width: 769px) and (max-device-width: 1083px) {
+    .mute {
+      left: 85%;
+    
+    }
+  }
