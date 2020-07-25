@@ -5,6 +5,7 @@ import { motion} from "framer-motion";
 
 const Champ = () => {
   let number = 0;
+  
   const handleMute = () => {
     setMuted((prevState) => {
       return !prevState;
@@ -22,6 +23,16 @@ const Champ = () => {
     setInitSound(true);
   };
 
+  const scroller = () => {
+    if (tracker > 2) {
+        
+        return setTracker(0)
+        
+      } 
+
+      
+      setTracker(tracker + 1);
+  }
   const traverse = (event) => {
     if (number > 2) {
       return (number = 0);
@@ -32,6 +43,7 @@ const Champ = () => {
     }
     event.deltaY < 0 ? number-- : number++;
 
+    console.log(number)
     setTracker(number);
   };
 
@@ -202,7 +214,7 @@ const Champ = () => {
         transition={{ delay: 3.5, duration: 3.5 }}
         className={styles.textContainer2}
       >
-        <SliceButton text="scroll" onClick={traverse} />
+        <SliceButton text="scroll" onClick={scroller} />
       </motion.div>
       {muteButton()}
     </div>
