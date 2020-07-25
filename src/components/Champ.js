@@ -5,11 +5,11 @@ import { SliceButton } from "reg-components";
 import { motion } from "framer-motion";
 import { Redirect } from "react-router-dom";
 
-
-const Champ = ({nextLink}) => {
+const Champ = ({ nextLink }) => {
   var xDown = null;
   var yDown = null;
 
+  let limit = 3
   function getTouches(evt) {
     return (
       evt.touches || evt.originalEvent.touches // browser API
@@ -22,9 +22,60 @@ const Champ = ({nextLink}) => {
     yDown = firstTouch.clientY;
   }
 
+  const handleMute = () => {
+    setMuted((prevState) => {
+      return !prevState;
+    });
+  };
+  const [muted, setMuted] = useState(true);
+  const [initSound, setInitSound] = useState(false);
+  const [tracker, setTracker] = useState(0);
+
+  const handleInitial = () => {
+    if (initSound) {
+      return;
+    }
+    handleMute();
+    setInitSound(true);
+  };
+
+  // Scroll on button tracker function
+  const scroller = (s) => {
+    if (tracker > limit) {
+      return setTracker(0);
+    }
+
+    return setTracker(tracker + 1);
+  };
+
+  //Scroll on mouseWheel tracker function
+  const traverse = (event) => {
+    if (tracker > limit) {
+      return setTracker(0);
+    }
+
+    if (tracker === 0 && event.deltaY < 0) {
+      return;
+    }
+
+    if (event.deltaY < 0) {
+      setTracker(tracker - 1);
+    } else if (event.deltaY > 0) {
+      console.log(tracker);
+      setTracker(tracker + 1);
+    }
+  };
+
+  // Swipe on mousewheel tracker function
+  function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  }
+
   function handleTouchMove(evt) {
-    if (number > 2) {
-      return (number = 0);
+    if (tracker > limit) {
+      setTracker(0);
     }
     if (!xDown || !yDown) {
       return;
@@ -46,58 +97,20 @@ const Champ = ({nextLink}) => {
     } else {
       if (yDiff > 0) {
         /* up swipe */
-        number++;
-        setTracker(number);
-      } else if (yDiff < 0 && number === 0) {
+
+        setTracker(tracker + 1);
+      } else if (yDiff < 0 && tracker === 0) {
         return;
       } else {
         /* down swipe */
-        number--;
-        setTracker(number);
+
+        setTracker(tracker - 1);
       }
     }
     /* reset values */
     xDown = null;
     yDown = null;
   }
-  let number = 0;
-
-  const handleMute = () => {
-    setMuted((prevState) => {
-      return !prevState;
-    });
-  };
-  const [muted, setMuted] = useState(true);
-  const [initSound, setInitSound] = useState(false);
-  const [tracker, setTracker] = useState(0);
-
-  const handleInitial = () => {
-    if (initSound) {
-      return;
-    }
-    handleMute();
-    setInitSound(true);
-  };
-
-  const scroller = () => {
-    if (tracker > 2) {
-      return setTracker(0);
-    }
-
-    setTracker(tracker + 1);
-  };
-  const traverse = (event) => {
-    if (number > 3) {
-      return (number = 0);
-    }
-
-    if (number === 0 && event.deltaY < 0) {
-      return;
-    }
-    event.deltaY < 0 ? number-- : number++;
-
-    setTracker(number);
-  };
 
   const muteButton = () => {
     if (tracker === 0 || tracker > 2) {
@@ -136,7 +149,7 @@ const Champ = ({nextLink}) => {
       case 1:
         return (
           <motion.img
-            key={57575 + number}
+            key={57575 }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3.5 }}
@@ -154,7 +167,7 @@ const Champ = ({nextLink}) => {
       case 2:
         return (
           <motion.img
-            key={69 + number}
+            key={69 }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3.5 }}
@@ -163,10 +176,8 @@ const Champ = ({nextLink}) => {
           />
         );
 
-        case 3: 
-        return (
-          <Redirect to={nextLink}/>
-        )
+      case 3:
+        return <Redirect to={nextLink} />;
       default:
         return (
           <video className={styles.champ} autoPlay loop muted={muted}>
@@ -182,7 +193,7 @@ const Champ = ({nextLink}) => {
       case 0:
         return (
           <motion.div
-            key={55 + number}
+            key={55 }
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -198,7 +209,7 @@ const Champ = ({nextLink}) => {
       case 1:
         return (
           <motion.div
-            key={16767 + number}
+            key={16767 }
             initial={{ y: "+200vh", opacity: 0 }}
             animate={{ y: 0, opacity: 0.8 }}
             transition={{ duration: 1.2, ease: "linear" }}
@@ -219,7 +230,7 @@ const Champ = ({nextLink}) => {
       case 2:
         return (
           <motion.div
-            key={155767 + number}
+            key={155767 }
             // initial={{ y: "+200vh", opacity:0 }}
             // animate={{ y: 0, opacity: 0.8}}
             transition={{ duration: 1.2, ease: "linear" }}
@@ -238,7 +249,7 @@ const Champ = ({nextLink}) => {
       default:
         return (
           <motion.div
-            key={2 + number}
+            key={2 }
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -246,7 +257,7 @@ const Champ = ({nextLink}) => {
           >
             <h1>CHAMP</h1>
             <h2>
-              From the creative vision of Reginald Anim and KinectiK Studios
+              From the creative vision of Reginald Anim and Khalid Keith-Pierre Iddisah
               <br />
             </h2>
           </motion.div>
@@ -257,7 +268,7 @@ const Champ = ({nextLink}) => {
   useEffect(() => {
     const throttledtraverse = _.throttle(traverse, 600);
 
-    window.addEventListener("wheel",  throttledtraverse);
+    window.addEventListener("wheel", throttledtraverse);
     window.addEventListener("touchstart", handleTouchStart, false);
     window.addEventListener("touchmove", handleTouchMove, false);
     console.log("hi");
@@ -266,7 +277,7 @@ const Champ = ({nextLink}) => {
       window.removeEventListener("touchstart", handleTouchStart, false);
       window.removeEventListener("touchmove", handleTouchMove, false);
     };
-  }, []);
+  }, [tracker]);
   return (
     <div className={styles.champParent} onClick={handleInitial}>
       {backDrop()}

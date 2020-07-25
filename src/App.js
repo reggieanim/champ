@@ -6,10 +6,11 @@ import {
 import Sidebar from "./components/Sidebar";
 import Chapter from "./components/Chapter/Chapter";
 import Champ from "./components/Champ";
+import Credits from "./components/Credits/Credits"
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Sidebar />
 
 
@@ -75,20 +76,21 @@ function App() {
           path="/epilogue"
           render={() => (
             <Chapter
-              nextLink="/"
+              nextLink="/credits"
               id="/epilogue"
               next="ABOUT"
               boxer="EPILOGUE"
               chapter="EPILOGUE"
-              chapterText='No one is responsible for me"'
+              chapterText='"No one is responsible for me"'
               openingVidLink="https://i.imgur.com/dvchPn7.mp4"
               videoLink="https://srv-file12.gofile.io/download/4jwFuG/Epilogue%20180.mp4"
               videoPoster="https://imgur.com/TPrSDFOg"
               defaultImg="https://i.imgur.com/PMeG84N.jpg"
             />
+            
           )}
         />
-  
+    <Route exact path="/credits" component={Credits} />
       {/* </AnimatePresence> */}
     </Router>
   );

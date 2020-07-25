@@ -45,6 +45,11 @@ const Sidebar = ({ history }) => {
             <span>Epilogue</span>
           </li>
           </Link>
+          <Link to="/credits">
+          <li className={isActive(history, "/credits")}>
+            <span>Credits</span>
+          </li>
+          </Link>
           {/* <li>
             <span>PROFILE</span>
             <span>REGINALD ANIM</span>

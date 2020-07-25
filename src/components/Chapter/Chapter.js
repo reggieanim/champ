@@ -56,27 +56,35 @@ const Chapter = ({
   };
 
   // Scroll on button tracker function
-  const scroller = () => {
-    if (number > limit) {
-      return (number = 0);
+  const scroller = (s) => {
+    if (tracker > limit) {
+      return setTracker(0);
     }
-    number++;
-    console.log(number);
-    setTracker(number);
+    
+   
+    return setTracker(tracker + 1)
+    
   };
 
   //Scroll on mouseWheel tracker function
   const traverse = (event) => {
-    if (number > limit) {
-      return (number = 0);
+    if (tracker > limit) {
+     return setTracker(0);
     }
 
-    if (number === 0 && event.deltaY < 0) {
+    if (tracker === 0 && event.deltaY < 0) {
       return;
     }
-    event.deltaY < 0 ? number-- : number++;
 
-    setTracker(number);
+    if (event.deltaY < 0) {
+      setTracker(tracker - 1)
+    } else if (event.deltaY > 0) {
+      console.log(tracker)
+      setTracker(tracker + 1)
+    }
+   
+
+    
   };
 
   // Swipe on mousewheel tracker function
@@ -87,8 +95,8 @@ const Chapter = ({
   }
 
   function handleTouchMove(evt) {
-    if (number > limit) {
-      return (number = 0);
+    if (tracker > limit) {
+      setTracker(0)
     }
     if (!xDown || !yDown) {
       return;
@@ -110,14 +118,14 @@ const Chapter = ({
     } else {
       if (yDiff > 0) {
         /* up swipe */
-        number++;
-        setTracker(number);
-      } else if (yDiff < 0 && number === 0) {
+        
+        setTracker(tracker + 1);
+      } else if (yDiff < 0 && tracker === 0) {
         return;
       } else {
         /* down swipe */
-        number--;
-        setTracker(number);
+        
+        setTracker(tracker - 1);
       }
     }
     /* reset values */
@@ -274,7 +282,7 @@ const Chapter = ({
       window.removeEventListener("touchstart", handleTouchStart, false);
       window.removeEventListener("touchmove", handleTouchMove, false);
     };
-  }, []);
+  }, [tracker]);
   return (
     <div className={styles.champParent} onClick={handleInitial}>
       {backDrop()}
