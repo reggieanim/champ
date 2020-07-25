@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/champ/static/css/main.6f68f244.chunk.css",
-    "main.js": "/champ/static/js/main.03a8fd68.chunk.js",
-    "main.js.map": "/champ/static/js/main.03a8fd68.chunk.js.map",
+    "main.css": "/champ/static/css/main.2cb1e76b.chunk.css",
+    "main.js": "/champ/static/js/main.12fd5aeb.chunk.js",
+    "main.js.map": "/champ/static/js/main.12fd5aeb.chunk.js.map",
     "runtime-main.js": "/champ/static/js/runtime-main.c5b1f87c.js",
     "runtime-main.js.map": "/champ/static/js/runtime-main.c5b1f87c.js.map",
     "static/css/2.85c120cf.chunk.css": "/champ/static/css/2.85c120cf.chunk.css",
     "static/js/2.517b1e64.chunk.js": "/champ/static/js/2.517b1e64.chunk.js",
     "static/js/2.517b1e64.chunk.js.map": "/champ/static/js/2.517b1e64.chunk.js.map",
     "index.html": "/champ/index.html",
-    "precache-manifest.ed6376a6fcb2ae6188d75d79315a1a74.js": "/champ/precache-manifest.ed6376a6fcb2ae6188d75d79315a1a74.js",
+    "precache-manifest.704759482f24a2f4026bf2d17bd7e1d4.js": "/champ/precache-manifest.704759482f24a2f4026bf2d17bd7e1d4.js",
     "service-worker.js": "/champ/service-worker.js",
     "static/css/2.85c120cf.chunk.css.map": "/champ/static/css/2.85c120cf.chunk.css.map",
-    "static/css/main.6f68f244.chunk.css.map": "/champ/static/css/main.6f68f244.chunk.css.map",
+    "static/css/main.2cb1e76b.chunk.css.map": "/champ/static/css/main.2cb1e76b.chunk.css.map",
     "static/js/2.517b1e64.chunk.js.LICENSE.txt": "/champ/static/js/2.517b1e64.chunk.js.LICENSE.txt",
     "static/media/sliceButton.module.scss": "/champ/static/media/FiraSans-Light.03422917.ttf",
     "static/media/Sidebar.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.c5b1f87c.js",
     "static/css/2.85c120cf.chunk.css",
     "static/js/2.517b1e64.chunk.js",
-    "static/css/main.6f68f244.chunk.css",
-    "static/js/main.03a8fd68.chunk.js"
+    "static/css/main.2cb1e76b.chunk.css",
+    "static/js/main.12fd5aeb.chunk.js"
   ]
 }
