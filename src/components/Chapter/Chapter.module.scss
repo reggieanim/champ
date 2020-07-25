@@ -35,7 +35,7 @@
       color: white;
       background-color: #0A0404;
       font-family: RBN;
-      font-size: 1000%;
+      font-size: 3em;
       padding-right: 15px;
       padding-left: 15px;
       margin-top: -20px;
@@ -43,7 +43,7 @@
     & h2 {
       color: white;
       font-family: RBN;
-      margin-top: -100px;
+      // margin-top: -100px;
       padding-right: 15px;
       padding-left: 15px;
       letter-spacing: 0.1em;
@@ -90,7 +90,7 @@
         color: white;
         background-color: #0A0404;
         font-family: RBN;
-        font-size: 1000%;
+        font-size: 3.5em;
         padding-right: 15px;
         padding-left: 15px;
         margin-top: -20px;
@@ -99,7 +99,7 @@
       & h2 {
         color: white;
         font-family: RBN;
-        margin-top: -100px;
+        // margin-top: -100px;
         padding-right: 15px;
         padding-left: 15px;
       }
@@ -183,30 +183,30 @@
       left: 78%;
     }
   
-    .textContainer {
-      left: 10%;
-      & h1 {
-        font-size: 58px;
-        margin: 0;
-      }
-      & h2 {
-        font-size: 13px;
-        margin: 0;
-      }
-    }
-    .textContainerPop1 {
-      max-width: 60%;
-      left: 10%;
-      & h1 {
-        font-size: 58px;
-        margin: 0;
-      }
-      & h2 {
+    // .textContainer {
+    //   left: 10%;
+    //   & h1 {
+    //     font-size: 58px;
+    //     margin: 0;
+    //   }
+    //   & h2 {
+    //     font-size: 13px;
+    //     margin: 0;
+    //   }
+    // }
+    // .textContainerPop1 {
+    //   max-width: 60%;
+    //   left: 10%;
+    //   & h1 {
+    //     font-size: 58px;
+    //     margin: 0;
+    //   }
+    //   & h2 {
       
-        font-size: 19px;
-        margin: 0;
-      }
-    }
+    //     font-size: 19px;
+    //     margin: 0;
+    //   }
+    // }
   }
   
   @media only screen and (min-width: 769px) and (max-device-width: 1083px) {
