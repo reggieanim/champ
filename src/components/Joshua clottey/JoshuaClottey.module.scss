@@ -1,13 +1,12 @@
 @font-face {
   font-family: RBN;
-  src: url(RBNo2Light-Light.ttf);
+  src: url(../RBNo2Light-Light.ttf);
 }
 
 .champParent {
   position: fixed;
   right: 10%;
   width: 100%;
-  // height: auto;
   background-color: black;
   height: 100%;
   overflow: hidden;
@@ -15,11 +14,13 @@
 
 .champ {
   position: absolute;
-  // width: 100%;
-  // top: 50%;
-  // left:50%;
-  // height: auto;
-  // transform: translate(-50%,-50%);
+  top:50%;
+  left:50%;
+  min-width: 100%; 
+  min-height: 100%;
+  width:auto;
+  height: auto;
+  transform: translate(-50%,-50%);
   z-index: -1;
 }
 
@@ -47,6 +48,34 @@
     padding-left: 15px;
   }
 }
+.videoContainer {
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  // background-color: pink;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & h1 {
+    color: white;
+    font-family: RBN;
+    font-size: 1rem;
+    position: absolute;
+    background-color: black;
+    width: 10%;
+    top:  100%;
+    left: 40%;
+    letter-spacing: 0.5em;
+  }
+}
+.videoPlayer {
+  position: absolute;
+  min-width: 50vw;
+  min-height: 50vh;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .textContainerPop1 {
     position: absolute;
@@ -64,7 +93,6 @@
       padding-right: 15px;
       padding-left: 15px;
       margin-top: -20px;
-      
     }
     & h2 {
       color: white;
@@ -123,22 +151,25 @@
 
 
 
-@media (min-aspect-ratio: 16/9) {
-  .champ {
-    // display: none;
-    width: 100%;
-    height: auto;
-  }
-}
+// @media (min-aspect-ratio: 16/9) {
+//   .champ {
+//     // display: none;
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
-@media (max-aspect-ratio: 16/9) {
-  .champ {
-    width: auto;
-    height: 100%;
-  }
-}
+// @media (max-aspect-ratio: 16/9) {
+//   .champ {
+//     width: auto;
+//     height: 100%;
+//   }
+// }
 
 @media only screen and (max-width: 768px) {
+  body {
+    font-size: 62.5%;
+  }
   .champParent {
     right: 0;
   }

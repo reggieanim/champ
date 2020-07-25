@@ -30,6 +30,14 @@ const Sidebar = () => {
           <li>
             <span>CREDITS</span>
           </li>
+          <li>
+            <span>PROFILE</span>
+            <span>REGINALD ANIM</span>
+          </li>
+          <li>
+            <span>PROFILE</span>
+            <span>TRAPCHALLA</span>
+          </li>
         </ul>
       </div>
     </div>
