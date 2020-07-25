@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/champ/static/css/main.c4e61616.chunk.css",
-    "main.js": "/champ/static/js/main.997966bd.chunk.js",
-    "main.js.map": "/champ/static/js/main.997966bd.chunk.js.map",
+    "main.css": "/champ/static/css/main.6f68f244.chunk.css",
+    "main.js": "/champ/static/js/main.03a8fd68.chunk.js",
+    "main.js.map": "/champ/static/js/main.03a8fd68.chunk.js.map",
     "runtime-main.js": "/champ/static/js/runtime-main.c5b1f87c.js",
     "runtime-main.js.map": "/champ/static/js/runtime-main.c5b1f87c.js.map",
     "static/css/2.85c120cf.chunk.css": "/champ/static/css/2.85c120cf.chunk.css",
-    "static/js/2.054ea0fd.chunk.js": "/champ/static/js/2.054ea0fd.chunk.js",
-    "static/js/2.054ea0fd.chunk.js.map": "/champ/static/js/2.054ea0fd.chunk.js.map",
+    "static/js/2.517b1e64.chunk.js": "/champ/static/js/2.517b1e64.chunk.js",
+    "static/js/2.517b1e64.chunk.js.map": "/champ/static/js/2.517b1e64.chunk.js.map",
     "index.html": "/champ/index.html",
-    "precache-manifest.0fc57c74e3aa582b8aaa367f042df629.js": "/champ/precache-manifest.0fc57c74e3aa582b8aaa367f042df629.js",
+    "precache-manifest.ed6376a6fcb2ae6188d75d79315a1a74.js": "/champ/precache-manifest.ed6376a6fcb2ae6188d75d79315a1a74.js",
     "service-worker.js": "/champ/service-worker.js",
     "static/css/2.85c120cf.chunk.css.map": "/champ/static/css/2.85c120cf.chunk.css.map",
-    "static/css/main.c4e61616.chunk.css.map": "/champ/static/css/main.c4e61616.chunk.css.map",
-    "static/js/2.054ea0fd.chunk.js.LICENSE.txt": "/champ/static/js/2.054ea0fd.chunk.js.LICENSE.txt",
+    "static/css/main.6f68f244.chunk.css.map": "/champ/static/css/main.6f68f244.chunk.css.map",
+    "static/js/2.517b1e64.chunk.js.LICENSE.txt": "/champ/static/js/2.517b1e64.chunk.js.LICENSE.txt",
     "static/media/sliceButton.module.scss": "/champ/static/media/FiraSans-Light.03422917.ttf",
-    "static/media/Champ.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
+    "static/media/Sidebar.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c5b1f87c.js",
     "static/css/2.85c120cf.chunk.css",
-    "static/js/2.054ea0fd.chunk.js",
-    "static/css/main.c4e61616.chunk.css",
-    "static/js/main.997966bd.chunk.js"
+    "static/js/2.517b1e64.chunk.js",
+    "static/css/main.6f68f244.chunk.css",
+    "static/js/main.03a8fd68.chunk.js"
   ]
 }
