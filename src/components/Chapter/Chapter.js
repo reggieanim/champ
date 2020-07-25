@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DefaultPlayer as Video } from "react-html5video";
+import { Redirect } from "react-router-dom"
+import _ from "lodash"
 import "react-html5video/dist/styles.css";
 
 import { SliceButton } from "reg-components";
@@ -15,6 +17,8 @@ const Chapter = ({
   videoPoster,
   defaultImg,
   next,
+  nextLink,
+  id
 }) => {
   var xDown = null;
   var yDown = null;
@@ -27,7 +31,7 @@ const Chapter = ({
   }
 
   let number = 0;
-  limit = 2;
+  limit = 3;
 
   // state properties
   const [muted, setMuted] = useState(true);
@@ -143,7 +147,7 @@ const Chapter = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 3.5 }}
-            key={7567565003}
+            key={`${id}7567565003`}
             className={styles.champ}
             autoPlay
             muted={muted}
@@ -159,10 +163,12 @@ const Chapter = ({
             initial={{ y: 300, x: -300 }}
             animate={{ x: "-40vw", y: "-40vh" }}
             transition={{ duration: 0.5 }}
+            exit={{opacity:0}}
           >
             <Video
+                onEnded={() => (console.log("whtevs"))}
               autoPlay
-              key={575632575 + number}
+              key={`${id}575632575` + number}
               className={styles.videoPlayer}
               controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}
               poster={videoPoster}
@@ -179,14 +185,20 @@ const Chapter = ({
       case 2:
         return (
           <motion.img
-            key={69 + number}
+            key={`${id}69` + number}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3.5 }}
             src={defaultImg}
             className={styles.champ}
+            exit={{opacity:0}}
           />
         );
+        case 3: 
+        console.log(nextLink)
+        return (
+            <Redirect to={nextLink}/>
+        )
       default:
         return (
           <video className={styles.champ} autoPlay muted={muted}>
@@ -202,7 +214,7 @@ const Chapter = ({
       case 0:
         return (
           <motion.div
-            key={586465 + number}
+            key={`${id}586465` + number}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -221,7 +233,7 @@ const Chapter = ({
       case 2:
         return (
           <motion.div
-            key={15574467 + number}
+            key={`${id}15574467` + number}
             transition={{ duration: 1.2, ease: "linear" }}
             className={styles.textContainerPop1}
           >
@@ -235,7 +247,7 @@ const Chapter = ({
       default:
         return (
           <motion.div
-            key={25664 + number}
+            key={`${id}25664` + number}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -252,13 +264,13 @@ const Chapter = ({
   };
 
   useEffect(() => {
-    //event listeners
-    window.addEventListener("wheel", traverse);
+    const throttledtraverse = _.throttle(traverse, 600);
+    window.addEventListener("wheel", throttledtraverse, false);
     window.addEventListener("touchstart", handleTouchStart, false);
     window.addEventListener("touchmove", handleTouchMove, false);
-    console.log("hi");
+   
     return () => {
-      window.removeEventListener("wheel", traverse);
+      window.removeEventListener("wheel", throttledtraverse, false);
       window.removeEventListener("touchstart", handleTouchStart, false);
       window.removeEventListener("touchmove", handleTouchMove, false);
     };
@@ -274,7 +286,11 @@ const Chapter = ({
         transition={{ delay: 3.5, duration: 3.5 }}
         className={styles.textContainer2}
       >
-        <SliceButton text="scroll" onClick={scroller} />
+        {tracker === 0 ? (
+          <SliceButton text="play" onClick={scroller} />
+        ) : (
+          <SliceButton text="scroll" onClick={scroller} />
+        )}
       </motion.div>
       {muteButton()}
     </div>

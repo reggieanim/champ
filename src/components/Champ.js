@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Champ.module.scss";
+import _ from "lodash";
 import { SliceButton } from "reg-components";
 import { motion } from "framer-motion";
+import { Redirect } from "react-router-dom";
 
-const Champ = () => {
+
+const Champ = ({nextLink}) => {
   var xDown = null;
   var yDown = null;
 
@@ -45,7 +48,7 @@ const Champ = () => {
         /* up swipe */
         number++;
         setTracker(number);
-      } else if (yDiff < 0 && number == 0) {
+      } else if (yDiff < 0 && number === 0) {
         return;
       } else {
         /* down swipe */
@@ -84,7 +87,7 @@ const Champ = () => {
     setTracker(tracker + 1);
   };
   const traverse = (event) => {
-    if (number > 2) {
+    if (number > 3) {
       return (number = 0);
     }
 
@@ -159,6 +162,11 @@ const Champ = () => {
             className={styles.champ}
           />
         );
+
+        case 3: 
+        return (
+          <Redirect to={nextLink}/>
+        )
       default:
         return (
           <video className={styles.champ} autoPlay loop muted={muted}>
@@ -247,12 +255,14 @@ const Champ = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", traverse);
+    const throttledtraverse = _.throttle(traverse, 600);
+
+    window.addEventListener("wheel",  throttledtraverse);
     window.addEventListener("touchstart", handleTouchStart, false);
     window.addEventListener("touchmove", handleTouchMove, false);
     console.log("hi");
     return () => {
-      window.removeEventListener("wheel", traverse);
+      window.removeEventListener("wheel", throttledtraverse);
       window.removeEventListener("touchstart", handleTouchStart, false);
       window.removeEventListener("touchmove", handleTouchMove, false);
     };
