@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/champ/static/css/main.2cb1e76b.chunk.css",
-    "main.js": "/champ/static/js/main.c9aeaa6e.chunk.js",
-    "main.js.map": "/champ/static/js/main.c9aeaa6e.chunk.js.map",
+    "main.css": "/champ/static/css/main.6d2c2cf7.chunk.css",
+    "main.js": "/champ/static/js/main.3c77b968.chunk.js",
+    "main.js.map": "/champ/static/js/main.3c77b968.chunk.js.map",
     "runtime-main.js": "/champ/static/js/runtime-main.c5b1f87c.js",
     "runtime-main.js.map": "/champ/static/js/runtime-main.c5b1f87c.js.map",
-    "static/css/2.85c120cf.chunk.css": "/champ/static/css/2.85c120cf.chunk.css",
-    "static/js/2.517b1e64.chunk.js": "/champ/static/js/2.517b1e64.chunk.js",
-    "static/js/2.517b1e64.chunk.js.map": "/champ/static/js/2.517b1e64.chunk.js.map",
+    "static/css/2.c9828a2d.chunk.css": "/champ/static/css/2.c9828a2d.chunk.css",
+    "static/js/2.aba33331.chunk.js": "/champ/static/js/2.aba33331.chunk.js",
+    "static/js/2.aba33331.chunk.js.map": "/champ/static/js/2.aba33331.chunk.js.map",
     "index.html": "/champ/index.html",
-    "precache-manifest.2dcb68981a6beb8ffe4414efdae41db8.js": "/champ/precache-manifest.2dcb68981a6beb8ffe4414efdae41db8.js",
+    "precache-manifest.6e1b99bfe807b2adb69f36570ace720f.js": "/champ/precache-manifest.6e1b99bfe807b2adb69f36570ace720f.js",
     "service-worker.js": "/champ/service-worker.js",
-    "static/css/2.85c120cf.chunk.css.map": "/champ/static/css/2.85c120cf.chunk.css.map",
-    "static/css/main.2cb1e76b.chunk.css.map": "/champ/static/css/main.2cb1e76b.chunk.css.map",
-    "static/js/2.517b1e64.chunk.js.LICENSE.txt": "/champ/static/js/2.517b1e64.chunk.js.LICENSE.txt",
+    "static/css/2.c9828a2d.chunk.css.map": "/champ/static/css/2.c9828a2d.chunk.css.map",
+    "static/css/main.6d2c2cf7.chunk.css.map": "/champ/static/css/main.6d2c2cf7.chunk.css.map",
+    "static/js/2.aba33331.chunk.js.LICENSE.txt": "/champ/static/js/2.aba33331.chunk.js.LICENSE.txt",
     "static/media/sliceButton.module.scss": "/champ/static/media/FiraSans-Light.03422917.ttf",
     "static/media/Sidebar.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c5b1f87c.js",
-    "static/css/2.85c120cf.chunk.css",
-    "static/js/2.517b1e64.chunk.js",
-    "static/css/main.2cb1e76b.chunk.css",
-    "static/js/main.c9aeaa6e.chunk.js"
+    "static/css/2.c9828a2d.chunk.css",
+    "static/js/2.aba33331.chunk.js",
+    "static/css/main.6d2c2cf7.chunk.css",
+    "static/js/main.3c77b968.chunk.js"
   ]
 }
