@@ -32,7 +32,7 @@ const Credits = () => {
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3.5, duration: 3.5 }}
+        transition={{ delay: 1.5, duration: 3.5 }}
         className={styles.createdBy}
       >
         CREATED BY

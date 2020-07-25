@@ -1,22 +1,24 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Chapter from "./components/Chapter/Chapter";
 import Champ from "./components/Champ";
-import Credits from "./components/Credits/Credits"
+import Credits from "./components/Credits/Credits";
 
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Sidebar />
 
-
-        
-        <Route key={8443434857} exact path="/" render={() => <Champ nextLink="/chapter-1" />} />
-        <Route key={8444343857} 
+      <Switch>
+        <Route
+          key={8443434857}
+          exact
+          path="/"
+          render={() => <Champ nextLink="/chapter-1" />}
+        />
+        <Route
+          key={8444343857}
           exact
           path="/chapter-1"
           render={() => (
@@ -35,7 +37,8 @@ function App() {
           )}
         />
         <Route
-          exact key={844844454557} 
+          exact
+          key={844844454557}
           path="/chapter-2"
           render={() => (
             <Chapter
@@ -53,7 +56,8 @@ function App() {
           )}
         />
 
-        <Route key={84449489957} 
+        <Route
+          key={84449489957}
           exact
           path="/chapter-3"
           render={() => (
@@ -71,7 +75,8 @@ function App() {
             />
           )}
         />
-         <Route key={84449466789957} 
+        <Route
+          key={84449466789957}
           exact
           path="/epilogue"
           render={() => (
@@ -87,10 +92,10 @@ function App() {
               videoPoster="https://imgur.com/TPrSDFOg"
               defaultImg="https://i.imgur.com/PMeG84N.jpg"
             />
-            
           )}
         />
-    <Route exact path="/credits" component={Credits} />
+        <Route exact path="/credits" component={Credits} />
+      </Switch>
       {/* </AnimatePresence> */}
     </Router>
   );
