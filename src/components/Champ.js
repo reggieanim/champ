@@ -1,11 +1,64 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Champ.module.scss";
 import { SliceButton } from "reg-components";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const Champ = () => {
+  var xDown = null;
+  var yDown = null;
+
+  function getTouches(evt) {
+    return (
+      evt.touches || evt.originalEvent.touches // browser API
+    ); // jQuery
+  }
+
+  function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  }
+
+  function handleTouchMove(evt) {
+    if (number > 2) {
+      return (number = 0);
+    }
+    if (!xDown || !yDown) {
+      return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      /*most significant*/
+      if (xDiff > 0) {
+        /* left swipe */
+      } else {
+        /* right swipe */
+      }
+    } else {
+      if (yDiff > 0) {
+        /* up swipe */
+        number++;
+        setTracker(number);
+      } else if (yDiff < 0 && number == 0) {
+        return;
+      } else {
+        /* down swipe */
+        number--;
+        setTracker(number);
+      }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+  }
   let number = 0;
-  
+
   const handleMute = () => {
     setMuted((prevState) => {
       return !prevState;
@@ -25,14 +78,11 @@ const Champ = () => {
 
   const scroller = () => {
     if (tracker > 2) {
-        
-        return setTracker(0)
-        
-      } 
+      return setTracker(0);
+    }
 
-      
-      setTracker(tracker + 1);
-  }
+    setTracker(tracker + 1);
+  };
   const traverse = (event) => {
     if (number > 2) {
       return (number = 0);
@@ -43,18 +93,20 @@ const Champ = () => {
     }
     event.deltaY < 0 ? number-- : number++;
 
-    console.log(number)
     setTracker(number);
   };
 
   const muteButton = () => {
     if (tracker === 0 || tracker > 2) {
-        return (<SliceButton
-            onClick={handleMute}
-            className={styles.mute}
-            text={muted ? "sound" : "mute"}
-          />)
-    } return
+      return (
+        <SliceButton
+          onClick={handleMute}
+          className={styles.mute}
+          text={muted ? "sound" : "mute"}
+        />
+      );
+    }
+    return;
   };
 
   const backDrop = () => {
@@ -196,9 +248,13 @@ const Champ = () => {
 
   useEffect(() => {
     window.addEventListener("wheel", traverse);
+    window.addEventListener("touchstart", handleTouchStart, false);
+    window.addEventListener("touchmove", handleTouchMove, false);
     console.log("hi");
     return () => {
       window.removeEventListener("wheel", traverse);
+      window.removeEventListener("touchstart", handleTouchStart, false);
+      window.removeEventListener("touchmove", handleTouchMove, false);
     };
   }, []);
   return (
