@@ -7,9 +7,18 @@
     width: 10%;
     position: fixed;
     height: 100%;
-    background-color: #4B0404;
+    background-color: #340504;
     left: 90%;
     z-index: 2;
+    
+    & img {
+        width: 95%;
+        border: solid;
+        margin-left: 5%;
+        margin-bottom: -100%;
+        // height: auto;
+        
+    }
 }
 
 .childSidebar {
@@ -17,6 +26,7 @@
     margin-top: 25vh;
     height: 40%;
     // background-color: #E2DFD0;
+    background-color: #0A0404;
     width: 100%;
 }
 
@@ -25,11 +35,11 @@
     border-left: solid;
     border-width: 10px;
     width: 100%;
-    border-color: black;
+    border-color: #0A0404;
 }
 
 .title {
-    background-color: black;
+    background-color: #0A0404;
     font-size: 29px;
 }
 
@@ -53,9 +63,10 @@
         margin-left: -10%;
         letter-spacing: 0em;
         // box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+        background-color: #061B25;
         font-size: 17px;
         width: 100%;
-        transition: all, 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: all, 0.3s ease-in;
         color: white;
         text-transform: uppercase;
         cursor: pointer;

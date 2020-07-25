@@ -1,116 +1,198 @@
 @font-face {
-    font-family: RBN;
-    src: url(RBNo2Light-Light.ttf);
-  }
+  font-family: RBN;
+  src: url(RBNo2Light-Light.ttf);
+}
 
 .champParent {
-    position: fixed;
-    right: 10%;
-    width: 100%;
-    // height: auto;
-    background-color: black;
-    height: 100%;
-    overflow: hidden;
-    
+  position: fixed;
+  right: 10%;
+  width: 100%;
+  // height: auto;
+  background-color: black;
+  height: 100%;
+  overflow: hidden;
 }
 
 .champ {
-    position: absolute; 
-    // width: 100%;
-    // top: 50%;
-    // left:50%;
-    // height: auto;
-    // transform: translate(-50%,-50%);
-    z-index: -1;
+  position: absolute;
+  // width: 100%;
+  // top: 50%;
+  // left:50%;
+  // height: auto;
+  // transform: translate(-50%,-50%);
+  z-index: -1;
 }
 
 .textContainer {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  max-width: 45%;
+  background-color: black;
+  opacity: 0.8;
+  & h1 {
+    color: white;
+    background-color: #061B25;
+    font-family: RBN;
+    font-size: 1000%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: -20px;
+  }
+  & h2 {
+    color: white;
+    font-family: RBN;
+    margin-top: -100px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.textContainerPop1 {
     position: absolute;
-    top:40%;
+    top: 40%;
+    left: 20%;
+    background-color: black;
+    
+    opacity: 0.8;
+    max-width: 45%;
+    & h1 {
+      color: white;
+      background-color: #061B25;
+      font-family: RBN;
+      font-size: 1000%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-top: -20px;
+    }
+    & h2 {
+      color: white;
+      font-family: RBN;
+      margin-top: -100px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+.textContainer2 {
+    position: absolute;
+    top: 90%;
     left: 20%;
     background-color: black;
     opacity: 0.8;
-    & h1  {
-        color: white;
-        font-family: RBN;
-        font-size: 1000%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-top: -20px;
-    }
-    & h2 {
-        color: white;
-        font-family: RBN;
-        margin-top: -100px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+    animation: bounce 1s infinite alternate;
+  -webkit-animation: bounce 1s infinite alternate;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 29%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid black;
+    clear: both;
+  }
 }
 
 .mute {
-    opacity: 0.8;
-    width: 200px;
-    position: absolute;
-    top:90%;
-    left: 94%;
-   
+  opacity: 0.8;
+  width: 200px;
+  position: absolute;
+  top: 90%;
+  left: 94%;
 }
 
-@media (min-aspect-ratio: 16/9) {
-    .champ {
-        // display: none;
-        width: 100%;
-        height: auto;
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
     }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+
+
+
+@media (min-aspect-ratio: 16/9) {
+  .champ {
+    // display: none;
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (max-aspect-ratio: 16/9) {
-    .champ {
-        width: auto;
-        height: 100%;
-    }
+  .champ {
+    width: auto;
+    height: 100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .champParent {
-      right: 0;
-    }
-    .mute {
-        opacity: 0.8;
-        width: 200px;
-        position: absolute;
-        top:90%;
-        left: 78%;
-       
-    }
-    .textContainer {
-        left: 10%;
-     & h1 {
-        font-size: 58px;
-        margin: 0;
-     }
-     & h2 {
-        font-size:13px;
-        margin: 0;
-     }
-    }
+  .champParent {
+    right: 0;
+  }
+  .mute {
+    opacity: 0.8;
+    width: 200px;
+    position: absolute;
+    top: 90%;
+    left: 78%;
   }
 
-  @media only screen and (min-width: 769px) and (max-device-width: 1083px) {
-    .mute {
-      left: 75%;
-    
+  .textContainer {
+    left: 10%;
+    & h1 {
+      font-size: 58px;
+      margin: 0;
     }
+    & h2 {
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+  .textContainerPop1 {
+    max-width: 60%;
+    left: 10%;
+    & h1 {
+      font-size: 58px;
+      margin: 0;
+    }
+    & h2 {
+    
+      font-size: 19px;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-device-width: 1083px) {
+  .mute {
+    left: 75%;
+  }
+}
+
+@media only screen and (min-width: 1084px) and (max-device-width: 1660px) {
+  .mute {
+    left: 88%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mute {
+    left: 55%;
   }
 
-  @media only screen and (min-width: 1084px) and (max-device-width: 1660px) {
-    .mute {
-      left: 88%;
-    
-    }
+  .textContainer2 {
+      top: 90%;
+      left: 10%;
   }
-  @media only screen and (max-width: 768px) {
-    .mute {
-      left:55%
-    }
-  }
+}

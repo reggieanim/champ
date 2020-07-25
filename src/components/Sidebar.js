@@ -4,17 +4,23 @@ import styles from "./Sidebar.module.scss";
 const Sidebar = () => {
   return (
     <div className={styles.parentSidebar}>
+
+        
+ 
+
       <div className={styles.childSidebar}>
         <ul className={styles.sideBarList}>
           <li className={styles.title}>
             <span>CHAMP</span>
+            <span>A film by kinectik studios</span>
           </li>
-          <li >
+          <li>
             <span>Chapter 1</span>
             <span>William Lartey</span>
           </li>
           <li>
-            <span>Chapter 2</span><br/>
+            <span>Chapter 2</span>
+            <br />
             <span>Nii Tagoe</span>
           </li>
           <li>
