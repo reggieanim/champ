@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Chapter from "./components/Chapter/Chapter";
 import Champ from "./components/Champ";
@@ -7,10 +7,10 @@ import Credits from "./components/Credits/Credits";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={'/'}>
       <Sidebar />
 
-      <Switch>
+        {/* <Switch> */}
         <Route
           key={8443434857}
           exact
@@ -70,7 +70,7 @@ function App() {
               chapterText="In the ring i have different names"
               openingVidLink="https://i.imgur.com/2e54QWe.mp4"
               videoLink="https://srv-file12.gofile.io/download/4jwFuG/Joseph.mp4"
-              videoPoster="https://i.imgur.com/2e54QWe.mp4"
+              videoPoster="https://imgur.com/a/qM4nBRl"
               defaultImg="https://i.imgur.com/PMeG84N.jpg"
             />
           )}
@@ -95,7 +95,7 @@ function App() {
           )}
         />
         <Route exact path="/credits" component={Credits} />
-      </Switch>
+        {/* </Switch> */}
       {/* </AnimatePresence> */}
     </Router>
   );

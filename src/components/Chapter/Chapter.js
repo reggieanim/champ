@@ -39,11 +39,20 @@ const Chapter = ({
   const [tracker, setTracker] = useState(0);
 
   // mute function
-  const handleMute = () => {
-    setMuted((prevState) => {
-      return !prevState;
-    });
-  };
+  const handleMute = (e = 0) => {
+    if (e===0) {
+      setMuted((prevState) => {
+        return !prevState;
+      });
+    } else {
+      e.preventDefault()
+      setMuted((prevState) => {
+        return !prevState;
+      });
+    }
+    }
+    
+  
 
   // handle initialMute
 
@@ -56,7 +65,8 @@ const Chapter = ({
   };
 
   // Scroll on button tracker function
-  const scroller = (s) => {
+  const scroller = (e) => {
+    e.preventDefault()
     if (tracker > limit) {
       return setTracker(0);
     }
@@ -135,6 +145,7 @@ const Chapter = ({
 
   //mute conditional render
   const muteButton = () => {
+    
     if (tracker === 0 || tracker > 2) {
       return (
         <SliceButton

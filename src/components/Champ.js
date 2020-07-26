@@ -40,11 +40,13 @@ const Champ = ({ nextLink }) => {
   };
 
   // Scroll on button tracker function
-  const scroller = (s) => {
+  const scroller = (e) => {
+    e.preventDefault()
     if (tracker > limit) {
       return setTracker(0);
     }
 
+    console.log(tracker)
     return setTracker(tracker + 1);
   };
 
@@ -271,7 +273,6 @@ const Champ = ({ nextLink }) => {
     window.addEventListener("wheel", throttledtraverse);
     window.addEventListener("touchstart", handleTouchStart, false);
     window.addEventListener("touchmove", handleTouchMove, false);
-    console.log("hi");
     return () => {
       window.removeEventListener("wheel", throttledtraverse);
       window.removeEventListener("touchstart", handleTouchStart, false);
