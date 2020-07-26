@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/champ/static/css/main.71473ad2.chunk.css",
+    "main.css": "/champ/static/css/main.96cba67e.chunk.css",
     "main.js": "/champ/static/js/main.94237b79.chunk.js",
     "main.js.map": "/champ/static/js/main.94237b79.chunk.js.map",
     "runtime-main.js": "/champ/static/js/runtime-main.c5b1f87c.js",
@@ -9,10 +9,10 @@
     "static/js/2.c7946d13.chunk.js": "/champ/static/js/2.c7946d13.chunk.js",
     "static/js/2.c7946d13.chunk.js.map": "/champ/static/js/2.c7946d13.chunk.js.map",
     "index.html": "/champ/index.html",
-    "precache-manifest.8ae0a8118af1005288383f13dccdf138.js": "/champ/precache-manifest.8ae0a8118af1005288383f13dccdf138.js",
+    "precache-manifest.13b266ac074086e902490c9a7ee09803.js": "/champ/precache-manifest.13b266ac074086e902490c9a7ee09803.js",
     "service-worker.js": "/champ/service-worker.js",
     "static/css/2.c9828a2d.chunk.css.map": "/champ/static/css/2.c9828a2d.chunk.css.map",
-    "static/css/main.71473ad2.chunk.css.map": "/champ/static/css/main.71473ad2.chunk.css.map",
+    "static/css/main.96cba67e.chunk.css.map": "/champ/static/css/main.96cba67e.chunk.css.map",
     "static/js/2.c7946d13.chunk.js.LICENSE.txt": "/champ/static/js/2.c7946d13.chunk.js.LICENSE.txt",
     "static/media/sliceButton.module.scss": "/champ/static/media/FiraSans-Light.03422917.ttf",
     "static/media/Sidebar.module.scss": "/champ/static/media/RBNo2Light-Light.cd107479.ttf"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.c5b1f87c.js",
     "static/css/2.c9828a2d.chunk.css",
     "static/js/2.c7946d13.chunk.js",
-    "static/css/main.71473ad2.chunk.css",
+    "static/css/main.96cba67e.chunk.css",
     "static/js/main.94237b79.chunk.js"
   ]
 }
