@@ -16,7 +16,7 @@ const Sidebar = ({ history }) => {
           <Link to="/">
             <li className={isActive(history, "/")}>
               <span>CHAMP</span>
-              <span>A film by kinectik studios</span>
+              <span>A film by khalid Iddisah</span>
             </li>
           </Link>
           <Link to="chapter-1">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { DefaultPlayer as Video } from "react-html5video";
-import { Redirect } from "react-router-dom"
-import _ from "lodash"
+import { Redirect } from "react-router-dom";
+import _ from "lodash";
 import "react-html5video/dist/styles.css";
 
 import { SliceButton } from "reg-components";
@@ -13,12 +12,11 @@ const Chapter = ({
   chapterText,
   boxer,
   openingVidLink,
-  videoLink,
-  videoPoster,
   defaultImg,
   next,
+  videoLink,
   nextLink,
-  id
+  id,
 }) => {
   var xDown = null;
   var yDown = null;
@@ -34,52 +32,48 @@ const Chapter = ({
   limit = 3;
 
   // state properties
-  const [muted, setMuted] = useState(true);
-  const [initSound, setInitSound] = useState(false);
+  // const [muted, setMuted] = useState(true);
+  // const [initSound, setInitSound] = useState(false);
   const [tracker, setTracker] = useState(0);
 
   // mute function
-  const handleMute = (e = 0) => {
-    if (e===0) {
-      setMuted((prevState) => {
-        return !prevState;
-      });
-    } else {
-      e.preventDefault()
-      setMuted((prevState) => {
-        return !prevState;
-      });
-    }
-    }
-    
-  
+  // const handleMute = (e = 0) => {
+  //   if (e===0) {
+  //     setMuted((prevState) => {
+  //       return !prevState;
+  //     });
+  //   } else {
+  //     e.preventDefault()
+  //     setMuted((prevState) => {
+  //       return !prevState;
+  //     });
+  //   }
+  //   }
 
   // handle initialMute
 
-  const handleInitial = () => {
-    if (initSound) {
-      return;
-    }
-    handleMute();
-    setInitSound(true);
-  };
+  // const handleInitial = () => {
+  //   if (initSound) {
+  //     return;
+  //   }
+  //   handleMute();
+  //   setInitSound(true);
+  // };
 
   // Scroll on button tracker function
   const scroller = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (tracker > limit) {
       return setTracker(0);
     }
-    
-   
-    return setTracker(tracker + 1)
-    
+
+    return setTracker(tracker + 1);
   };
 
   //Scroll on mouseWheel tracker function
   const traverse = (event) => {
     if (tracker > limit) {
-     return setTracker(0);
+      return setTracker(0);
     }
 
     if (tracker === 0 && event.deltaY < 0) {
@@ -87,14 +81,10 @@ const Chapter = ({
     }
 
     if (event.deltaY < 0) {
-      setTracker(tracker - 1)
+      setTracker(tracker - 1);
     } else if (event.deltaY > 0) {
-      console.log(tracker)
-      setTracker(tracker + 1)
+      setTracker(tracker + 1);
     }
-   
-
-    
   };
 
   // Swipe on mousewheel tracker function
@@ -106,7 +96,7 @@ const Chapter = ({
 
   function handleTouchMove(evt) {
     if (tracker > limit) {
-      setTracker(0)
+      setTracker(0);
     }
     if (!xDown || !yDown) {
       return;
@@ -128,13 +118,13 @@ const Chapter = ({
     } else {
       if (yDiff > 0) {
         /* up swipe */
-        
+
         setTracker(tracker + 1);
       } else if (yDiff < 0 && tracker === 0) {
         return;
       } else {
         /* down swipe */
-        
+
         setTracker(tracker - 1);
       }
     }
@@ -144,19 +134,19 @@ const Chapter = ({
   }
 
   //mute conditional render
-  const muteButton = () => {
-    
-    if (tracker === 0 || tracker > 2) {
-      return (
-        <SliceButton
-          onClick={handleMute}
-          className={styles.mute}
-          text={muted ? "sound" : "mute"}
-        />
-      );
-    }
-    return;
-  };
+  // const muteButton = () => {
+
+  //   if (tracker === 0 || tracker > 2) {
+  //     return (
+  //       <SliceButton
+  //         onClick={handleMute}
+  //         className={styles.mute}
+  //         text={muted ? "sound" : "mute"}
+  //       />
+  //     );
+  //   }
+  //   return;
+  // };
 
   const backDrop = () => {
     switch (tracker) {
@@ -169,7 +159,7 @@ const Chapter = ({
             key={`${id}7567565003`}
             className={styles.champ}
             autoPlay
-            muted={muted}
+            muted
           >
             <source src={openingVidLink} />
             Your browser does not support the video tag.
@@ -180,24 +170,21 @@ const Chapter = ({
           <motion.div
             className={styles.videoContainer}
             initial={{ y: 300, x: -300 }}
-            animate={{ x: "-40vw", y: "-40vh" }}
+            animate={{ x: "-35vw", y: "-35vh" }}
             transition={{ duration: 0.5 }}
-            exit={{opacity:0}}
+            exit={{ opacity: 0 }}
           >
-            <Video
-                onEnded={() => (console.log("whtevs"))}
-              autoPlay
-              key={`${id}575632575` + number}
+ 
+            <iframe
+            title={boxer}
+              src={videoLink}
               className={styles.videoPlayer}
-              controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}
-              poster={videoPoster}
-              onCanPlayThrough={() => {
-                // Do stuff
-              }}
-            >
-              <source src={videoLink} type="video/webm" />
-              <track label="English" kind="subtitles" srcLang="en" default />
-            </Video>
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+            <p>
+            </p>
             <h1>{boxer}</h1>
           </motion.div>
         );
@@ -210,17 +197,14 @@ const Chapter = ({
             transition={{ duration: 3.5 }}
             src={defaultImg}
             className={styles.champ}
-            exit={{opacity:0}}
+            exit={{ opacity: 0 }}
           />
         );
-        case 3: 
-        console.log(nextLink)
-        return (
-            <Redirect to={nextLink}/>
-        )
+      case 3:
+        return <Redirect to={nextLink} />;
       default:
         return (
-          <video className={styles.champ} autoPlay muted={muted}>
+          <video className={styles.champ} autoPlay muted>
             <source src={openingVidLink} />
             Your browser does not support the video tag.
           </video>
@@ -287,7 +271,7 @@ const Chapter = ({
     window.addEventListener("wheel", throttledtraverse, false);
     window.addEventListener("touchstart", handleTouchStart, false);
     window.addEventListener("touchmove", handleTouchMove, false);
-   
+
     return () => {
       window.removeEventListener("wheel", throttledtraverse, false);
       window.removeEventListener("touchstart", handleTouchStart, false);
@@ -295,7 +279,7 @@ const Chapter = ({
     };
   }, [tracker]);
   return (
-    <div className={styles.champParent} onClick={handleInitial}>
+    <div className={styles.champParent}>
       {backDrop()}
       {textDrop()}
       <motion.div
@@ -311,7 +295,7 @@ const Chapter = ({
           <SliceButton text="scroll" onClick={scroller} />
         )}
       </motion.div>
-      {muteButton()}
+      {/* {muteButton()} */}
     </div>
   );
 };

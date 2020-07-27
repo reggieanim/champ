@@ -9,44 +9,40 @@ const Champ = ({ nextLink }) => {
   var xDown = null;
   var yDown = null;
 
-  let limit = 3
+  let limit = 3;
   function getTouches(evt) {
     return (
       evt.touches || evt.originalEvent.touches // browser API
     ); // jQuery
   }
 
-  function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-  }
+ 
 
-  const handleMute = () => {
-    setMuted((prevState) => {
-      return !prevState;
-    });
-  };
-  const [muted, setMuted] = useState(true);
-  const [initSound, setInitSound] = useState(false);
+  // const handleMute = () => {
+  //   setMuted((prevState) => {
+  //     return !prevState;
+  //   });
+  // };
+  // const [muted, setMuted] = useState(true);
+
   const [tracker, setTracker] = useState(0);
 
-  const handleInitial = () => {
-    if (initSound) {
-      return;
-    }
-    handleMute();
-    setInitSound(true);
-  };
+  // const handleInitial = () => {
+  //   if (initSound) {
+  //     return;
+  //   }
+  //   handleMute();
+  //   setInitSound(true);
+  // };
 
   // Scroll on button tracker function
   const scroller = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (tracker > limit) {
       return setTracker(0);
     }
 
-    console.log(tracker)
+    console.log(tracker);
     return setTracker(tracker + 1);
   };
 
@@ -63,7 +59,6 @@ const Champ = ({ nextLink }) => {
     if (event.deltaY < 0) {
       setTracker(tracker - 1);
     } else if (event.deltaY > 0) {
-      console.log(tracker);
       setTracker(tracker + 1);
     }
   };
@@ -114,18 +109,18 @@ const Champ = ({ nextLink }) => {
     yDown = null;
   }
 
-  const muteButton = () => {
-    if (tracker === 0 || tracker > 2) {
-      return (
-        <SliceButton
-          onClick={handleMute}
-          className={styles.mute}
-          text={muted ? "sound" : "mute"}
-        />
-      );
-    }
-    return;
-  };
+  // const muteButton = () => {
+  //   if (tracker === 0 || tracker > 2) {
+  //     return (
+  //       <SliceButton
+  //         onClick={handleMute}
+  //         className={styles.mute}
+  //         text={muted ? "sound" : "mute"}
+  //       />
+  //     );
+  //   }
+  //   return;
+  // };
 
   const backDrop = () => {
     switch (tracker) {
@@ -142,7 +137,7 @@ const Champ = ({ nextLink }) => {
             className={styles.champ}
             autoPlay
             loop
-            muted={muted}
+            // muted={muted}
           >
             <source src="https://i.imgur.com/1InZsdT.mp4" />
             Your browser does not support the video tag.
@@ -151,7 +146,7 @@ const Champ = ({ nextLink }) => {
       case 1:
         return (
           <motion.img
-            key={57575 }
+            key={57575}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3.5 }}
@@ -169,7 +164,7 @@ const Champ = ({ nextLink }) => {
       case 2:
         return (
           <motion.img
-            key={69 }
+            key={69}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3.5 }}
@@ -182,7 +177,7 @@ const Champ = ({ nextLink }) => {
         return <Redirect to={nextLink} />;
       default:
         return (
-          <video className={styles.champ} autoPlay loop muted={muted}>
+          <video className={styles.champ} autoPlay loop>
             <source src="https://i.imgur.com/1InZsdT.mp4" />
             Your browser does not support the video tag.
           </video>
@@ -195,7 +190,7 @@ const Champ = ({ nextLink }) => {
       case 0:
         return (
           <motion.div
-            key={55 }
+            key={55}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -203,7 +198,7 @@ const Champ = ({ nextLink }) => {
           >
             <h1>CHAMP</h1>
             <h2>
-              From the creative vision of Reginald Anim and KinectiK Studios
+              From the creative vision of Reginald Anim and Khalid Keith-Pierre Iddisah
               <br />
             </h2>
           </motion.div>
@@ -211,7 +206,7 @@ const Champ = ({ nextLink }) => {
       case 1:
         return (
           <motion.div
-            key={16767 }
+            key={16767}
             initial={{ y: "+200vh", opacity: 0 }}
             animate={{ y: 0, opacity: 0.8 }}
             transition={{ duration: 1.2, ease: "linear" }}
@@ -232,7 +227,7 @@ const Champ = ({ nextLink }) => {
       case 2:
         return (
           <motion.div
-            key={155767 }
+            key={155767}
             // initial={{ y: "+200vh", opacity:0 }}
             // animate={{ y: 0, opacity: 0.8}}
             transition={{ duration: 1.2, ease: "linear" }}
@@ -251,7 +246,7 @@ const Champ = ({ nextLink }) => {
       default:
         return (
           <motion.div
-            key={2 }
+            key={2}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ delay: 3.5, duration: 3.5 }}
@@ -259,7 +254,8 @@ const Champ = ({ nextLink }) => {
           >
             <h1>CHAMP</h1>
             <h2>
-              From the creative vision of Reginald Anim and Khalid Keith-Pierre Iddisah
+              From the creative vision of Reginald Anim and Khalid Keith-Pierre
+              Iddisah
               <br />
             </h2>
           </motion.div>
@@ -280,7 +276,7 @@ const Champ = ({ nextLink }) => {
     };
   }, [tracker]);
   return (
-    <div className={styles.champParent} onClick={handleInitial}>
+    <div className={styles.champParent}>
       {backDrop()}
 
       {textDrop()}
@@ -294,7 +290,7 @@ const Champ = ({ nextLink }) => {
       >
         <SliceButton text="scroll" onClick={scroller} />
       </motion.div>
-      {muteButton()}
+      {/* {muteButton()} */}
     </div>
   );
 };
